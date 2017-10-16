@@ -21,8 +21,6 @@ namespace DecompilationAndroidManifest
             txtShow.AllowDrop = true;
             txtShow.DragDrop += TxtShow_DragDrop;
             txtShow.DragEnter += TxtShow_DragEnter;
-
-            this.WindowState = FormWindowState.Maximized;
         }
 
         private void TxtShow_DragEnter(object sender, DragEventArgs e)
