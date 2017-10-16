@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.12
+VisualStudioVersion = 15.0.27004.2002
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCorePublishTool", "NetCorePublishTool\NetCorePublishTool.csproj", "{BA334DB4-FCF9-42AE-A3B4-87C5605E0BE2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DecompilationAndroidManifest", "DecompilationAndroidManifest\DecompilationAndroidManifest.csproj", "{B04BDC21-C50D-47DD-8CD5-C1733FE5833E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{BA334DB4-FCF9-42AE-A3B4-87C5605E0BE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA334DB4-FCF9-42AE-A3B4-87C5605E0BE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA334DB4-FCF9-42AE-A3B4-87C5605E0BE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B04BDC21-C50D-47DD-8CD5-C1733FE5833E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B04BDC21-C50D-47DD-8CD5-C1733FE5833E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B04BDC21-C50D-47DD-8CD5-C1733FE5833E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B04BDC21-C50D-47DD-8CD5-C1733FE5833E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
