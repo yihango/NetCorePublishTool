@@ -33,8 +33,11 @@ namespace NetCorePublishTool
             this.linkDoc.LinkClicked += LinkDoc_LinkClicked;
             this.ckbRuntime.CheckedChanged += CkbRuntime_CheckedChanged;
             this.cmbRuntime.SelectedIndexChanged += CmbRuntime_SelectedIndexChanged;
+
+            this.txtLog.TextChanged += TxtLog_TextChanged;
         }
 
+     
 
 
 
@@ -107,7 +110,7 @@ namespace NetCorePublishTool
                     // 是否检测到项目文件
                     if (!flag)
                     {
-                        MessageBox.Show("未找到项目文件!请检查是否存在.csproj项目文件!","提示",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                        MessageBox.Show("未找到项目文件!请检查是否存在.csproj项目文件!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
 
@@ -172,6 +175,19 @@ namespace NetCorePublishTool
         }
 
         /// <summary>
+        /// 日志发生改变滑动到低端
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TxtLog_TextChanged(object sender, EventArgs e)
+        {
+            txtLog.SelectionStart = txtLog.Text.Length; 
+            txtLog.ScrollToCaret(); 
+        }
+
+
+
+        /// <summary>
         /// 立即发布
         /// </summary>
         /// <param name="sender"></param>
@@ -221,59 +237,37 @@ namespace NetCorePublishTool
             sb.Append(txtOutPath.Text);
             sb.Append("\"");
 
-            txtCmd.Text = sb.ToString();
+
 
             #endregion
 
 
+            var tmpCmd = sb.ToString();
 
-            RunCmd(txtCmd.Text);
-        }
+            this.AppendText($"{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}  正在执行:\r\n{tmpCmd}\r\n");
 
-        /// <summary>
-        /// cmd执行命令
-        /// </summary>
-        /// <param name="cmdTxt">命令</param>
-        private void RunCmd(string cmdTxt)
-        {
-            Process p = new Process();
-            p.StartInfo.FileName = "cmd.exe";
-            p.StartInfo.UseShellExecute = false;        //是否使用操作系统shell启动
-            p.StartInfo.RedirectStandardInput = true;   //接受来自调用程序的输入信息
-            // p.StartInfo.RedirectStandardOutput = true;  //由调用程序获取输出信息
-            // p.StartInfo.RedirectStandardError = true;   //重定向标准错误输出
-            // p.StartInfo.CreateNoWindow = true;          //不显示程序窗口
-            p.Start();//启动程序
+            var cmd = new CMD() { CmdStr = tmpCmd };
 
-            //向cmd窗口写入命令
-            p.StandardInput.WriteLine(cmdTxt);
-            //p.StandardInput.AutoFlush = true;
-            p.Close();
-        }
-
-
-
-        private void Test()
-        {
-            List<String> Dlls = new List<string>();
-            List<String> Namespaces = new List<string>();
-            List<String> Methods = new List<string>();
-            foreach (var Assembly in AppDomain.CurrentDomain.GetAssemblies())
+            Task.Factory.StartNew(() =>
             {
-                if (!Dlls.Contains(Assembly.GetName().Name))
-                    Dlls.Add(Assembly.GetName().Name);
-
-                foreach (var Type in Assembly.GetTypes())
+                if (cmd.Exec(cmd, str => this.AppendText(str)))
                 {
-                    if (!Namespaces.Contains(Type.Namespace))
-                        Namespaces.Add(Type.Namespace);
-                    foreach (var Method in Type.GetMethods())
-                    {
-                        Methods.Add(String.Format("{0}.{1}", Type.Name, Method.Name));
-                    }
+                    this.AppendText("==================== 执行完成! ====================\r\n\r\n");
                 }
+                else
+                {
+                    this.AppendText($"{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}  执行命令出错！错误信息:{cmd.Exception.Message}\r\n{cmd.Exception.ToString()}\r\n");
+                    this.AppendText("==================== 执行命令出错! ====================\r\n\r\n");
+                }
+            });
+        }
 
-            }
+        private void AppendText(string str)
+        {
+            this.txtLog.Invoke(new Action<string>((par) =>
+            {
+                this.txtLog.AppendText(par);
+            }), str);
         }
     }
 }

@@ -37,51 +37,27 @@ namespace DecompilationAndroidManifest
 
             if (!string.IsNullOrWhiteSpace(path))
             {
-                var cmdTxt = $@"java -jar .\jars\AXMLPrinter2.jar {path}";
+                var cmd = new CMD() { CmdStr = $@"java -jar .\jars\AXMLPrinter2.jar {path}" };
 
-                txtShow.Text = RunCmd(cmdTxt);
+                Task.Factory.StartNew(() =>
+                {
+                    if (cmd.Exec(cmd, null))
+                    {
+                        this.SetText(cmd.Res);
+                    }
+                    else
+                    {
+                        this.SetText($"发生错误,错误信息:{cmd.Exception.Message}\r\n{cmd.Exception.ToString()}");
+                    }
+                });
             }
         }
-
-        /// <summary>
-        /// cmd执行命令
-        /// </summary>
-        /// <param name="cmdTxt">命令</param>
-        private string RunCmd(string cmdTxt)
+        private void SetText(string str)
         {
-            var sb = new StringBuilder();
-
-            using (Process p = new Process())
+            this.txtShow.Invoke(new Action<string>((par) =>
             {
-                p.StartInfo.FileName = "cmd.exe";
-                p.StartInfo.UseShellExecute = false;        //是否使用操作系统shell启动  
-                p.StartInfo.RedirectStandardInput = true;   //接受来自调用程序的输入信息  
-                p.StartInfo.RedirectStandardOutput = true;  //由调用程序获取输出信息  
-                p.StartInfo.RedirectStandardError = true;   //重定向标准错误输出  
-                p.StartInfo.CreateNoWindow = true;          //不显示程序窗口  
-                p.Start();//启动程序  
-                //向cmd窗口写入命令  
-                p.StandardInput.WriteLine(cmdTxt);
-                p.StandardInput.AutoFlush = true;
-                //获取cmd窗口的输出信息  
-                var reader = p.StandardOutput;//截取输出流  
-                string line = reader.ReadLine();//每次读取一行  
-                sb.AppendLine(line);
-                while (!reader.EndOfStream)
-                {
-                    line = reader.ReadLine();
-                    sb.AppendLine(line);
-
-                    if (line.Contains("</manifest>"))
-                    {
-                        break;
-                    }
-                }
-                // </manifest>
-                p.Close();
-            }
-
-            return sb.ToString();
+                this.txtShow.Text = par;
+            }), str);
         }
     }
 }
