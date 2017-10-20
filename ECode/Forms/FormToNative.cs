@@ -31,7 +31,7 @@ namespace ECode.Forms
             this.btnExec.Click += BtnExec_Click;
 
             this.txtSourcePath.TextChanged += TxtSourcePath_TextChanged;
-            this.txtOutPutAppName.TextAlignChanged += TxtOutPutAppName_TextAlignChanged;
+            this.txtOutPutAppName.TextChanged += TxtOutPutAppName_TextChanged;
 
 
             cmbMode.SelectedIndex = 0;
@@ -98,7 +98,7 @@ namespace ECode.Forms
         }
 
         bool isSelfChange = false;
-        private void TxtOutPutAppName_TextAlignChanged(object sender, EventArgs e)
+        private void TxtOutPutAppName_TextChanged(object sender, EventArgs e)
         {
             // 如果是自己改变自己的值则不执行过滤
             if (!isSelfChange)
@@ -109,11 +109,8 @@ namespace ECode.Forms
                     tempStr = txtOutPutAppName.Text.Replace(item.ToString(), "");
                 }
                 isSelfChange = true;
-                if (!tempStr.EndsWith(".exe"))
-                    tempStr = $"{tempStr}.exe";
-
                 txtOutPutAppName.Text = tempStr;
-                txtOutPutPath.Text = Path.Combine(txtOutPutPath.Text, txtOutPutAppName.Text).Replace("\\\\", "\\");
+                txtOutPutAppName.Select(txtOutPutAppName.Text.Length, 0);
             }
             else
             {
@@ -125,7 +122,7 @@ namespace ECode.Forms
 
         private void BtnAbout_Click(object sender, EventArgs e)
         {
-            var txt = File.ReadAllText(@".\AppData\tonative\readme.txt", Encoding.UTF8);
+            var txt = File.ReadAllText(@".\AppData\tonative\readme.txt", Encoding.Default);
             MessageBox.Show(txt, "关于ToNative");
         }
 
@@ -167,12 +164,13 @@ namespace ECode.Forms
                     break;
             }
 
-            sb.Append($"\"{txtSourcePath.Text}\"");
+            sb.Append($"\"{txtSourcePath.Text}\" ");
 
             var outPath = $"{txtOutPutPath.Text}\\{txtOutPutAppName.Text}".Replace("\\\\", "\\");
-
-            sb.Append($"\"{outPath}\"");
-
+            if (!outPath.EndsWith(".exe"))
+                sb.Append($" \"{outPath}.exe\"");
+            else
+                sb.Append($" \"{outPath}\"");
 
             var cmd = new CMD() { CmdStr = sb.ToString() };
             this.AppendText($"{TimeNow()}  正在执行:\r\n{cmd.CmdStr}\r\n");
