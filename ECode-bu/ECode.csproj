@@ -1,0 +1,441 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{10D87ACD-DFCB-4C60-8CDC-E01CAC04970F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ECode</RootNamespace>
+    <AssemblyName>ECode</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>20171019011223478_easyicon_net_64.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="E.StringEx, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\E.StringEx.1.0.3\lib\net45\E.StringEx.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Commons\CMD.cs" />
+    <Compile Include="Commons\FormHelper.cs" />
+    <Compile Include="Commons\TimeEx.cs" />
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormDeAndroidManifest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormDeAndroidManifest.Designer.cs">
+      <DependentUpon>FormDeAndroidManifest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormNCorePub.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormNCorePub.Designer.cs">
+      <DependentUpon>FormNCorePub.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormToNative.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormToNative.Designer.cs">
+      <DependentUpon>FormToNative.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormDeAndroidManifest.resx">
+      <DependentUpon>FormDeAndroidManifest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormNCorePub.resx">
+      <DependentUpon>FormNCorePub.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormToNative.resx">
+      <DependentUpon>FormToNative.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="AppData\tonative\tools\exe32.bin" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="20171019011223478_easyicon_net_64.ico" />
+    <Content Include="AppData\jars\AXMLPrinter2.jar">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\netcorepub\os.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\tonative\readme.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\tonative\ToNative.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Accessibility.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\Microsoft.Win32.Primitives.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\Microsoft.Win32.Registry.AccessControl.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\Microsoft.Win32.Registry.AccessControl.pdb" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\Microsoft.Win32.Registry.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\netstandard.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.AppContext.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Collections.Concurrent.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Collections.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Collections.NonGeneric.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Collections.Specialized.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.ComponentModel.Annotations.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.ComponentModel.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.ComponentModel.EventBasedAsync.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.ComponentModel.Primitives.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.ComponentModel.TypeConverter.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Console.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Data.Common.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Data.SqlClient.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Diagnostics.Contracts.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Diagnostics.Debug.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Diagnostics.FileVersionInfo.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Diagnostics.Process.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Diagnostics.StackTrace.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Diagnostics.StackTrace.pdb" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Diagnostics.TextWriterTraceListener.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Diagnostics.Tools.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Diagnostics.TraceEvent.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Diagnostics.TraceSource.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Diagnostics.Tracing.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Drawing.Primitives.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Dynamic.Runtime.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Globalization.Calendars.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Globalization.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Globalization.Extensions.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Globalization.Extensions.pdb" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.IO.Compression.ZipFile.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.IO.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.IO.FileSystem.AccessControl.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.IO.FileSystem.AccessControl.pdb" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.IO.FileSystem.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.IO.FileSystem.DriveInfo.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.IO.FileSystem.Primitives.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.IO.FileSystem.Watcher.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.IO.IsolatedStorage.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.IO.MemoryMappedFiles.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.IO.Pipes.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.IO.UnmanagedMemoryStream.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Linq.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Linq.Expressions.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Linq.Parallel.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Linq.Queryable.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Net.AuthenticationManager.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Net.Cache.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Net.HttpListener.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Net.Mail.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Net.NameResolution.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Net.NetworkInformation.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Net.Primitives.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Net.Requests.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Net.Security.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Net.ServicePoint.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Net.Sockets.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Net.Utilities.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Net.WebHeaderCollection.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Net.WebSockets.Client.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Net.WebSockets.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.ObjectModel.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Reflection.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Reflection.Emit.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Reflection.Emit.ILGeneration.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Reflection.Emit.Lightweight.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Reflection.Extensions.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Reflection.Primitives.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Reflection.TypeExtensions.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Reflection.TypeExtensions.pdb" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Resources.ReaderWriter.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Resources.ResourceManager.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Runtime.CompilerServices.VisualC.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Runtime.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Runtime.Extensions.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Runtime.Handles.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Runtime.InteropServices.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Runtime.InteropServices.RuntimeInformation.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Runtime.InteropServices.RuntimeInformation.pdb" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Runtime.InteropServices.WindowsRuntime.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Runtime.Numerics.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Runtime.Serialization.Json.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Runtime.Serialization.Primitives.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Runtime.Serialization.Xml.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Runtime.Serialization.Xml.pdb" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Security.AccessControl.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Security.Claims.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Security.Cryptography.Algorithms.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Security.Cryptography.Algorithms.pdb" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Security.Cryptography.DeriveBytes.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Security.Cryptography.Encoding.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Security.Cryptography.Encryption.Aes.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Security.Cryptography.Encryption.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Security.Cryptography.Encryption.ECDiffieHellman.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Security.Cryptography.Encryption.ECDsa.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Security.Cryptography.Hashing.Algorithms.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Security.Cryptography.Hashing.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Security.Cryptography.Primitives.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Security.Cryptography.ProtectedData.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Security.Cryptography.RandomNumberGenerator.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Security.Cryptography.RSA.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Security.Cryptography.X509Certificates.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Security.Principal.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Security.Principal.Windows.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Security.SecureString.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Security.SecureString.pdb" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.ServiceModel.Duplex.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.ServiceModel.Http.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.ServiceModel.NetTcp.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.ServiceModel.Primitives.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.ServiceModel.Security.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.ServiceProcess.ServiceController.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.ServiceProcess.ServiceController.pdb" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Text.Encoding.CodePages.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Text.Encoding.CodePages.pdb" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Text.Encoding.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Text.Encoding.Extensions.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Text.RegularExpressions.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Threading.AccessControl.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Threading.AccessControl.pdb" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Threading.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Threading.Overlapped.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Threading.Tasks.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Threading.Tasks.Parallel.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Threading.Thread.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Threading.ThreadPool.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Threading.Timer.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.ValueTuple.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Xml.ReaderWriter.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Xml.XDocument.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Xml.XmlDocument.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Xml.XmlSerializer.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Xml.XPath.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Xml.XPath.XDocument.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Xml.XPath.XDocument.pdb" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Facades\System.Xml.Xsl.Primitives.dll" />
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Microsoft.CSharp.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Mono.CSharp.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Mono.Data.Sqlite.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\Mono.Data.Tds.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\System.ComponentModel.DataAnnotations.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\System.Configuration.Install.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\System.Core.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\System.Data.DataSetExtensions.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\System.Data.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\System.Data.Entity.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\System.Data.Linq.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\System.Data.OracleClient.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\System.Data.Services.Client.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\System.Data.Services.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\System.DirectoryServices.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\System.DirectoryServices.Protocols.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\System.Drawing.Design.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\System.Drawing.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\System.Dynamic.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\System.EnterpriseServices.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\System.IdentityModel.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\System.IdentityModel.Selectors.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\System.IO.Compression.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\System.IO.Compression.FileSystem.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\System.Json.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\System.Json.Microsoft.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\System.Management.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\System.Messaging.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\System.Net.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\System.Net.Http.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\System.Net.Http.Formatting.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\System.Net.Http.WebRequest.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\System.Numerics.Vectors.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\System.Runtime.Caching.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\System.Runtime.DurableInstancing.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\System.Runtime.Remoting.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\System.Runtime.Serialization.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\System.Runtime.Serialization.Formatters.Soap.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\System.ServiceModel.Activation.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\System.ServiceModel.Discovery.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\System.ServiceModel.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\System.ServiceModel.Internals.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\System.ServiceModel.Routing.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\System.ServiceModel.Web.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\System.ServiceProcess.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\System.Threading.Tasks.Dataflow.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\System.Transactions.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\System.Web.Http.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\System.Windows.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\System.Windows.Forms.DataVisualization.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\System.Windows.Forms.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\System.Xml.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\System.Xml.Serialization.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\tonative\tools\备用DLL\win64位dlls\WindowsBase.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCorePublishTool", "NetCo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DecompilationAndroidManifest", "DecompilationAndroidManifest\DecompilationAndroidManifest.csproj", "{B04BDC21-C50D-47DD-8CD5-C1733FE5833E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECode", "ECode\ECode.csproj", "{720054C6-85AF-46C7-BEFC-43DE53C08B7C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{B04BDC21-C50D-47DD-8CD5-C1733FE5833E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B04BDC21-C50D-47DD-8CD5-C1733FE5833E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B04BDC21-C50D-47DD-8CD5-C1733FE5833E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{720054C6-85AF-46C7-BEFC-43DE53C08B7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{720054C6-85AF-46C7-BEFC-43DE53C08B7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{720054C6-85AF-46C7-BEFC-43DE53C08B7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{720054C6-85AF-46C7-BEFC-43DE53C08B7C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

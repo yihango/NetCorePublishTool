@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // 有关程序集的一般信息由以下
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("NetCorePublishTool")]
+[assembly: AssemblyTitle("NCorePub")]
 [assembly: AssemblyDescription("作者:玩双截棍的熊猫")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]

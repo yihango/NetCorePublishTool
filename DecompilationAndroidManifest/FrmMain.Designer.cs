@@ -48,7 +48,7 @@
             this.ClientSize = new System.Drawing.Size(924, 451);
             this.Controls.Add(this.txtShow);
             this.Name = "FrmMain";
-            this.Text = "AndroidManifest解析";
+            this.Text = "AndroidManifest解析   by.玩双截棍的熊猫";
             this.ResumeLayout(false);
 
         }
