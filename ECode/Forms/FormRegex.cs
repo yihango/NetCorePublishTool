@@ -20,8 +20,6 @@ namespace ECode.Forms
 
         string RegStr { get; set; } = string.Empty;
 
-        public MatchCollection Mcs { get; set; }
-
 
         public FormRegex()
         {
@@ -87,10 +85,10 @@ namespace ECode.Forms
             if (RegStr.IsNull())
                 return;
 
-            Mcs = GetResult(txtSource.Text, RegStr);
+            GetResult(txtSource.Text, RegStr);
         }
 
-        MatchCollection GetResult(string source, string regStr)
+        void GetResult(string source, string regStr)
         {
             var dt = new DataTable();
 
@@ -129,7 +127,6 @@ namespace ECode.Forms
 
             lblCount.Text = $"匹配到 {count} 条数据";
             dgvResult.DataSource = dt;
-            return mcs;
         }
 
         void WriteCache()
@@ -179,12 +176,6 @@ namespace ECode.Forms
         {
             try
             {
-                var dir = Path.GetDirectoryName(path);
-                if (!Directory.Exists(dir))
-                {
-                    Directory.CreateDirectory(dir);
-                }
-
                 using (var fs = new FileStream(path, FileMode.OpenOrCreate, FileAccess.Write))
                 {
                     var buffer = Encoding.ASCII.GetBytes(content ?? string.Empty);

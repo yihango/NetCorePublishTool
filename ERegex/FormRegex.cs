@@ -20,8 +20,6 @@ namespace ERegex
 
         string RegStr { get; set; } = string.Empty;
 
-        public MatchCollection Mcs { get; set; }
-
 
         public FormRegex()
         {
@@ -31,7 +29,7 @@ namespace ERegex
 
 
             var caches = ReadCache();
-            txtRegStrs.Text =caches[0];
+            txtRegStrs.Text = caches[0];
             txtSource.Text = caches[1];
         }
 
@@ -87,10 +85,10 @@ namespace ERegex
             if (RegStr.IsNull())
                 return;
 
-            Mcs = GetResult(txtSource.Text, RegStr);
+            GetResult(txtSource.Text, RegStr);
         }
 
-        MatchCollection GetResult(string source, string regStr)
+        void GetResult(string source, string regStr)
         {
             var dt = new DataTable();
 
@@ -129,7 +127,6 @@ namespace ERegex
 
             lblCount.Text = $"匹配到 {count} 条数据";
             dgvResult.DataSource = dt;
-            return mcs;
         }
 
         void WriteCache()

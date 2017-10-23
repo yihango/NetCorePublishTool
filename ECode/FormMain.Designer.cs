@@ -36,9 +36,9 @@
             this.btnDeAndroidManifest = new System.Windows.Forms.ToolStripMenuItem();
             this.宇内流云ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnToNative = new System.Windows.Forms.ToolStripMenuItem();
-            this.关于ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.其他ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnRegexTool = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,7 +49,7 @@
             this.xamarinToolStripMenuItem,
             this.宇内流云ToolStripMenuItem,
             this.其他ToolStripMenuItem,
-            this.关于ToolStripMenuItem});
+            this.btnAbout});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(651, 25);
@@ -95,14 +95,8 @@
             // btnToNative
             // 
             this.btnToNative.Name = "btnToNative";
-            this.btnToNative.Size = new System.Drawing.Size(154, 22);
-            this.btnToNative.Text = "EXE ToNative";
-            // 
-            // 关于ToolStripMenuItem
-            // 
-            this.关于ToolStripMenuItem.Name = "关于ToolStripMenuItem";
-            this.关于ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
-            this.关于ToolStripMenuItem.Text = "关于";
+            this.btnToNative.Size = new System.Drawing.Size(152, 22);
+            this.btnToNative.Text = "EXE Native";
             // 
             // 其他ToolStripMenuItem
             // 
@@ -115,8 +109,14 @@
             // btnRegexTool
             // 
             this.btnRegexTool.Name = "btnRegexTool";
-            this.btnRegexTool.Size = new System.Drawing.Size(152, 22);
+            this.btnRegexTool.Size = new System.Drawing.Size(148, 22);
             this.btnRegexTool.Text = "正则测试工具";
+            // 
+            // btnAbout
+            // 
+            this.btnAbout.Name = "btnAbout";
+            this.btnAbout.Size = new System.Drawing.Size(44, 21);
+            this.btnAbout.Text = "关于";
             // 
             // FormMain
             // 
@@ -128,6 +128,7 @@
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ECode";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -145,7 +146,7 @@
         private System.Windows.Forms.ToolStripMenuItem btnDeAndroidManifest;
         private System.Windows.Forms.ToolStripMenuItem 宇内流云ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem btnToNative;
-        private System.Windows.Forms.ToolStripMenuItem 关于ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem btnAbout;
         private System.Windows.Forms.ToolStripMenuItem 其他ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem btnRegexTool;
     }

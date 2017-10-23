@@ -4,14 +4,13 @@ ToNative.exe ÊÇÒ»¸ö½«.net exe³ÌÐò×ª»¯³ÉÒ»¸ö¿ÉÒÔ¶ÀÁ¢ÔËÐÐµÄ¡°±¾µØ³ÌÐò¡±µÄÃüÁîÐÐ¹¤¾
 
 
 
-ÃüÁî¸ñÊ½ÊÇ
-ToNative  .NETExeÎÄ¼þ Éú³ÉµÄExeÎÄ¼þÃû
+ÃüÁîÐÐ»ù±¾¸ñÊ½ÊÇ£º
+ToNative [²ÎÊý] .NETExeÎÄ¼þ [Éú³ÉµÄExeÎÄ¼þÃû]
 
-ÃüÁîÐÐ²ÎÊý¸üÏêÏ¸µÄËµÃ÷£¬ÇëÓÃÃüÁî£º tonative -h ²é¿´
+ÃüÁîÐÐ²ÎÊý¸üÏêÏ¸µÄËµÃ÷£¬ÇëÓÃÃüÁî£ºtonative -h ²é¿´
 
 
 ×¢£º
-1£¬ÕâÊÇÊÔÓÃ°æ£¬Ö»ÄÜ´¦ÀíÐ¡ÓÚ64K×Ö½Ú´óÐ¡µÄ.net exeÎÄ¼þ¡£
-2£¬±¾°æToNative×ª»»³öµÄÄ¿±ê³ÌÐòÊÇ64Î»windows¿ØÖÆÌ¨³ÌÐò»ò×ÀÃæ´°Ìå³ÌÐò¡£
-3£¬Éú³ÉµÄÄ¿±êÎÄ¼þÖÐÖ»¼¯³ÉÁË»ù±¾µÄ¿ØÖÆÌ¨³ÌÐòÀà¿â£¬ÆäËüÀà¿âÔÚtoolsÎÄ¼þ¼ÐÖÐ¡£
+1£¬ÕâÊÇÊÔÓÃ°æ£¬Ö»ÄÜ´¦ÀíÐ¡ÓÚ96K×Ö½Ú´óÐ¡µÄ.net exeÎÄ¼þ¡£
+2£¬Éú³ÉµÄÄ¿±êÎÄ¼þÖÐÖ»¼¯³ÉÁË»ù±¾µÄ¿ØÖÆÌ¨³ÌÐòÀà¿â£¬ÆäËüÀà¿âÔÚtoolsÎÄ¼þ¼ÐÖÐ¡£
 

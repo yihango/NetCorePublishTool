@@ -32,16 +32,16 @@
             this.txtSourcePath = new System.Windows.Forms.TextBox();
             this.btnSelectSourcePath = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnSelectOutPutPath = new System.Windows.Forms.Button();
-            this.txtOutPutPath = new System.Windows.Forms.TextBox();
+            this.cmbMode = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnExec = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.btnAbout = new System.Windows.Forms.Button();
             this.txtOutPutAppName = new System.Windows.Forms.TextBox();
-            this.btnExec = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cmbMode = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnSelectOutPutPath = new System.Windows.Forms.Button();
+            this.txtOutPutPath = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.txtLog = new System.Windows.Forms.RichTextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -92,39 +92,38 @@
             this.panel1.Size = new System.Drawing.Size(652, 127);
             this.panel1.TabIndex = 3;
             // 
-            // panel2
+            // cmbMode
             // 
-            this.panel2.Controls.Add(this.txtLog);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 127);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(652, 321);
-            this.panel2.TabIndex = 4;
+            this.cmbMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbMode.FormattingEnabled = true;
+            this.cmbMode.Items.AddRange(new object[] {
+            "default        默认生成",
+            "winform      生成Windows窗体程序",
+            "win7 x86     生成支持32位 Win7 以上系统的程序",
+            "winXP x86   生成支持32位 Win XP 以上系统的程序",
+            "linux           生成Linux程序  --  暂未支持"});
+            this.cmbMode.Location = new System.Drawing.Point(102, 96);
+            this.cmbMode.Name = "cmbMode";
+            this.cmbMode.Size = new System.Drawing.Size(447, 20);
+            this.cmbMode.TabIndex = 11;
             // 
-            // label2
+            // label4
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 43);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 12);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "输出程序路径:";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(15, 98);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(83, 12);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "生成程序模式:";
             // 
-            // btnSelectOutPutPath
+            // btnExec
             // 
-            this.btnSelectOutPutPath.Location = new System.Drawing.Point(555, 38);
-            this.btnSelectOutPutPath.Name = "btnSelectOutPutPath";
-            this.btnSelectOutPutPath.Size = new System.Drawing.Size(75, 23);
-            this.btnSelectOutPutPath.TabIndex = 5;
-            this.btnSelectOutPutPath.Text = "选择";
-            this.btnSelectOutPutPath.UseVisualStyleBackColor = true;
-            // 
-            // txtOutPutPath
-            // 
-            this.txtOutPutPath.Location = new System.Drawing.Point(102, 39);
-            this.txtOutPutPath.Name = "txtOutPutPath";
-            this.txtOutPutPath.Size = new System.Drawing.Size(447, 21);
-            this.txtOutPutPath.TabIndex = 4;
+            this.btnExec.Location = new System.Drawing.Point(555, 94);
+            this.btnExec.Name = "btnExec";
+            this.btnExec.Size = new System.Drawing.Size(75, 23);
+            this.btnExec.TabIndex = 9;
+            this.btnExec.Text = "Native";
+            this.btnExec.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -151,38 +150,39 @@
             this.txtOutPutAppName.Size = new System.Drawing.Size(447, 21);
             this.txtOutPutAppName.TabIndex = 7;
             // 
-            // btnExec
+            // label2
             // 
-            this.btnExec.Location = new System.Drawing.Point(555, 94);
-            this.btnExec.Name = "btnExec";
-            this.btnExec.Size = new System.Drawing.Size(75, 23);
-            this.btnExec.TabIndex = 9;
-            this.btnExec.Text = "ToNative";
-            this.btnExec.UseVisualStyleBackColor = true;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(13, 43);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(83, 12);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "输出程序路径:";
             // 
-            // label4
+            // btnSelectOutPutPath
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(15, 98);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(83, 12);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "生成程序模式:";
+            this.btnSelectOutPutPath.Location = new System.Drawing.Point(555, 38);
+            this.btnSelectOutPutPath.Name = "btnSelectOutPutPath";
+            this.btnSelectOutPutPath.Size = new System.Drawing.Size(75, 23);
+            this.btnSelectOutPutPath.TabIndex = 5;
+            this.btnSelectOutPutPath.Text = "选择";
+            this.btnSelectOutPutPath.UseVisualStyleBackColor = true;
             // 
-            // cmbMode
+            // txtOutPutPath
             // 
-            this.cmbMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbMode.FormattingEnabled = true;
-            this.cmbMode.Items.AddRange(new object[] {
-            "default        默认生成",
-            "winform      生成Windows窗体程序",
-            "linux           生成Linux程序",
-            "win7 x86     生成支持32位 Win7 以上系统的程序",
-            "winXP x86   生成支持32位 Win XP 以上系统的程序"});
-            this.cmbMode.Location = new System.Drawing.Point(102, 96);
-            this.cmbMode.Name = "cmbMode";
-            this.cmbMode.Size = new System.Drawing.Size(447, 20);
-            this.cmbMode.TabIndex = 11;
+            this.txtOutPutPath.Location = new System.Drawing.Point(102, 39);
+            this.txtOutPutPath.Name = "txtOutPutPath";
+            this.txtOutPutPath.Size = new System.Drawing.Size(447, 21);
+            this.txtOutPutPath.TabIndex = 4;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.txtLog);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 127);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(652, 321);
+            this.panel2.TabIndex = 4;
             // 
             // txtLog
             // 

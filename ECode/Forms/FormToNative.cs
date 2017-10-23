@@ -154,14 +154,17 @@ namespace ECode.Forms
                     sb.Append(" -w ");
                     break;
                 case 2:
-                    sb.Append(" -lin ");
-                    break;
-                case 3:
                     sb.Append(" -x32 ");
                     break;
-                case 4:
+                case 3:
                     sb.Append(" -xp ");
                     break;
+                //case 4:
+                //    sb.Append(" -lin ");
+                //    break;
+                default:
+                    MessageBox.Show("暂未支持！", "提示");
+                    return;
             }
 
             sb.Append($"\"{txtSourcePath.Text}\" ");
