@@ -37,6 +37,8 @@
             this.宇内流云ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnToNative = new System.Windows.Forms.ToolStripMenuItem();
             this.关于ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.其他ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnRegexTool = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,7 +48,8 @@
             this.toolStripMenuItem1,
             this.xamarinToolStripMenuItem,
             this.宇内流云ToolStripMenuItem,
-            this.关于ToolStripMenuItem});
+            this.关于ToolStripMenuItem,
+            this.其他ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(651, 25);
@@ -101,6 +104,20 @@
             this.关于ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.关于ToolStripMenuItem.Text = "关于";
             // 
+            // 其他ToolStripMenuItem
+            // 
+            this.其他ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnRegexTool});
+            this.其他ToolStripMenuItem.Name = "其他ToolStripMenuItem";
+            this.其他ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.其他ToolStripMenuItem.Text = "其它";
+            // 
+            // btnRegexTool
+            // 
+            this.btnRegexTool.Name = "btnRegexTool";
+            this.btnRegexTool.Size = new System.Drawing.Size(152, 22);
+            this.btnRegexTool.Text = "正则测试工具";
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -129,6 +146,8 @@
         private System.Windows.Forms.ToolStripMenuItem 宇内流云ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem btnToNative;
         private System.Windows.Forms.ToolStripMenuItem 关于ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 其他ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem btnRegexTool;
     }
 }
 

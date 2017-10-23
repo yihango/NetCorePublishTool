@@ -25,8 +25,14 @@ namespace ECode
             this.btnNetCorePub.Click += BtnNCorePub_Click;
             this.btnDeAndroidManifest.Click += BtnDeAndroidManifest_Click;
             this.btnToNative.Click += BtnToNavite_Click;
+            this.btnRegexTool.Click += BtnRegexTool_Click;
 
             //this.menuStrip1.ItemAdded += MenuStrip1_ItemAdded;
+        }
+
+        private void BtnRegexTool_Click(object sender, EventArgs e)
+        {
+            this.GetForm<FormRegex>().Show();
         }
 
         //private void MenuStrip1_ItemAdded(object sender, ToolStripItemEventArgs e)

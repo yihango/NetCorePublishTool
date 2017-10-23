@@ -71,6 +71,12 @@
     <Compile Include="Forms\FormNCorePub.Designer.cs">
       <DependentUpon>FormNCorePub.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormRegex.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormRegex.Designer.cs">
+      <DependentUpon>FormRegex.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormToNative.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +93,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormNCorePub.resx">
       <DependentUpon>FormNCorePub.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormRegex.resx">
+      <DependentUpon>FormRegex.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormToNative.resx">
       <DependentUpon>FormToNative.cs</DependentUpon>
