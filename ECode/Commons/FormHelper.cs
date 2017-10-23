@@ -53,6 +53,18 @@ namespace ECode.Commons
             }
         }
 
+        public static void DisposeForm()
+        {
+            foreach (var item in FrmList)
+            {
+                if (!item.IsDisposed)
+                {
+                    item.Dispose();
+                }
+            }
+            FrmList.Clear();
+        }
+
         /// <summary>
         /// 创建新窗体
         /// </summary>

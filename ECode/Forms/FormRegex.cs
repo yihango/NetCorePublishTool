@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -14,6 +15,9 @@ namespace ECode.Forms
 {
     public partial class FormRegex : Form
     {
+        const string regstr_cache_path = "./AppData/regcache/regstr.cache";
+        const string source_cache_path = "./AppData/regcache/source.cache";
+
         string RegStr { get; set; } = string.Empty;
 
         public MatchCollection Mcs { get; set; }
@@ -24,13 +28,18 @@ namespace ECode.Forms
             InitializeComponent();
 
             BindEvent();
+
+
+            var caches = ReadCache();
+            txtRegStrs.Text = caches[0];
+            txtSource.Text = caches[1];
         }
 
         void BindEvent()
         {
             this.btnExec.Click += BtnExec_Click;
 
-           
+
             this.dgvResult.SelectionChanged += DgvResult_SelectionChanged;
 
             this.dgvResult.ReadOnly = true;
@@ -46,13 +55,13 @@ namespace ECode.Forms
                 var val = string.Empty;
 
 
-                var temp=dgvResult.SelectedCells[0];
+                var temp = dgvResult.SelectedCells[0];
 
                 foreach (DataGridViewCell item in dgvResult.SelectedCells)
                 {
                     if (item.Selected)
                     {
-                        txtSelect.Text= item.Value.ToString();
+                        txtSelect.Text = item.Value.ToString();
                         break;
                     }
                 }
@@ -61,6 +70,8 @@ namespace ECode.Forms
 
         private void BtnExec_Click(object sender, EventArgs e)
         {
+            WriteCache();
+
             if (txtRegStrs.SelectedText.IsNull())
             {
                 var strs = txtRegStrs.Text.Split(new char[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
@@ -78,7 +89,6 @@ namespace ECode.Forms
 
             Mcs = GetResult(txtSource.Text, RegStr);
         }
-
 
         MatchCollection GetResult(string source, string regStr)
         {
@@ -120,6 +130,71 @@ namespace ECode.Forms
             lblCount.Text = $"匹配到 {count} 条数据";
             dgvResult.DataSource = dt;
             return mcs;
+        }
+
+        void WriteCache()
+        {
+            WriteFile(regstr_cache_path, txtRegStrs.Text);
+
+            WriteFile(source_cache_path, txtSource.Text);
+        }
+
+        string[] ReadCache()
+        {
+            string[] caches = { string.Empty, string.Empty };
+
+
+            caches[0] = ReadFile(regstr_cache_path);
+            caches[1] = ReadFile(source_cache_path);
+
+
+            return caches;
+        }
+
+        string ReadFile(string path)
+        {
+            try
+            {
+                var dir = Path.GetDirectoryName(path);
+                if (!Directory.Exists(dir))
+                {
+                    Directory.CreateDirectory(dir);
+                }
+
+
+                using (var fs = new FileStream(path, FileMode.OpenOrCreate, FileAccess.Read))
+                {
+                    var buffer = new byte[1024 * 1024 * 1];
+                    var stopFlag = fs.Read(buffer, 0, buffer.Length);
+                    return Encoding.ASCII.GetString(buffer, 0, stopFlag);
+                }
+            }
+            catch (Exception e)
+            {
+                return string.Empty;
+            }
+        }
+
+        void WriteFile(string path, string content)
+        {
+            try
+            {
+                var dir = Path.GetDirectoryName(path);
+                if (!Directory.Exists(dir))
+                {
+                    Directory.CreateDirectory(dir);
+                }
+
+                using (var fs = new FileStream(path, FileMode.OpenOrCreate, FileAccess.Write))
+                {
+                    var buffer = Encoding.ASCII.GetBytes(content ?? string.Empty);
+                    fs.Write(buffer, 0, buffer.Length);
+                }
+            }
+            catch (Exception e)
+            {
+
+            }
         }
     }
 

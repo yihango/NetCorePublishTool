@@ -48,8 +48,8 @@
             this.toolStripMenuItem1,
             this.xamarinToolStripMenuItem,
             this.宇内流云ToolStripMenuItem,
-            this.关于ToolStripMenuItem,
-            this.其他ToolStripMenuItem});
+            this.其他ToolStripMenuItem,
+            this.关于ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(651, 25);

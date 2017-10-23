@@ -28,7 +28,11 @@ namespace ECode
             this.btnRegexTool.Click += BtnRegexTool_Click;
 
             //this.menuStrip1.ItemAdded += MenuStrip1_ItemAdded;
+
+            this.FormClosing += FormMain_FormClosing;
         }
+
+
 
         private void BtnRegexTool_Click(object sender, EventArgs e)
         {
@@ -56,6 +60,10 @@ namespace ECode
         private void BtnNCorePub_Click(object sender, EventArgs e)
         {
             this.GetForm<FormNCorePub>().Show();
+        }
+        private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DisposeForm();
         }
     }
 }
