@@ -96,37 +96,47 @@ namespace ECode.Forms
             DataRow row = null;
             var count = 0;
 
-            var mcs = Regex.Matches(source, regStr);
-            if (mcs != null && mcs.Count > 0)
+            MatchCollection mcs = null;
+
+            try
             {
-                if (mcs[0].Groups != null && mcs[0].Groups.Count > 0)
-                {
-                    for (int i = 0; i < mcs[0].Groups.Count; i++)
-                    {
-                        cols.Add(new DataColumn(i.ToString()));
-                    }
-                }
+                mcs = Regex.Matches(source, regStr);
 
-                dt.Columns.AddRange(cols.ToArray());
-
-                foreach (Match mc in mcs)
+                if (mcs != null && mcs.Count > 0)
                 {
-                    if (mc.Groups != null && mc.Groups.Count > 0)
+                    if (mcs[0].Groups != null && mcs[0].Groups.Count > 0)
                     {
-                        row = dt.NewRow();
-                        for (int i = 0; i < mc.Groups.Count; i++)
+                        for (int i = 0; i < mcs[0].Groups.Count; i++)
                         {
-                            row[i.ToString()] = mc.Groups[i].Value ?? string.Empty;
+                            cols.Add(new DataColumn(i.ToString()));
                         }
-                        dt.Rows.Add(row);
                     }
+
+                    dt.Columns.AddRange(cols.ToArray());
+
+                    foreach (Match mc in mcs)
+                    {
+                        if (mc.Groups != null && mc.Groups.Count > 0)
+                        {
+                            row = dt.NewRow();
+                            for (int i = 0; i < mc.Groups.Count; i++)
+                            {
+                                row[i.ToString()] = mc.Groups[i].Value ?? string.Empty;
+                            }
+                            dt.Rows.Add(row);
+                        }
+                    }
+
+                    count = mcs.Count;
                 }
 
-                count = mcs.Count;
+                dgvResult.DataSource = dt;
             }
-
+            catch (Exception e)
+            {
+                txtSelect.Text = $"发生错误！错误信息:{e.Message}\r\n{e.ToString()}";
+            }
             lblCount.Text = $"匹配到 {count} 条数据";
-            dgvResult.DataSource = dt;
         }
 
         void WriteCache()
@@ -163,7 +173,7 @@ namespace ECode.Forms
                 {
                     var buffer = new byte[1024 * 1024 * 1];
                     var stopFlag = fs.Read(buffer, 0, buffer.Length);
-                    return Encoding.ASCII.GetString(buffer, 0, stopFlag);
+                    return Encoding.UTF8.GetString(buffer, 0, stopFlag);
                 }
             }
             catch (Exception e)
@@ -178,7 +188,7 @@ namespace ECode.Forms
             {
                 using (var fs = new FileStream(path, FileMode.OpenOrCreate, FileAccess.Write))
                 {
-                    var buffer = Encoding.ASCII.GetBytes(content ?? string.Empty);
+                    var buffer = Encoding.UTF8.GetBytes(content ?? string.Empty);
                     fs.Write(buffer, 0, buffer.Length);
                 }
             }
