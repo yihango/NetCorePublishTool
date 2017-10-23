@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECode", "ECode\ECode.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERegex", "ERegex\ERegex.csproj", "{1F9D84A8-6DD5-4664-9E18-CB38798FC26A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToNative", "ToNative\ToNative.csproj", "{7E3128E5-B1DB-4406-9A23-B7C4D16CC583}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECode.Common", "ECode.Common\ECode.Common.csproj", "{0D1E2FAF-38A2-4387-81B2-8F6B16002D2D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{1F9D84A8-6DD5-4664-9E18-CB38798FC26A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F9D84A8-6DD5-4664-9E18-CB38798FC26A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1F9D84A8-6DD5-4664-9E18-CB38798FC26A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E3128E5-B1DB-4406-9A23-B7C4D16CC583}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E3128E5-B1DB-4406-9A23-B7C4D16CC583}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E3128E5-B1DB-4406-9A23-B7C4D16CC583}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E3128E5-B1DB-4406-9A23-B7C4D16CC583}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D1E2FAF-38A2-4387-81B2-8F6B16002D2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D1E2FAF-38A2-4387-81B2-8F6B16002D2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D1E2FAF-38A2-4387-81B2-8F6B16002D2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D1E2FAF-38A2-4387-81B2-8F6B16002D2D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

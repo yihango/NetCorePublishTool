@@ -44,17 +44,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CMD.cs" />
-    <Compile Include="FrmMain.cs">
+    <Compile Include="FormDeAndroidManifest.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmMain.Designer.cs">
-      <DependentUpon>FrmMain.cs</DependentUpon>
+    <Compile Include="FormDeAndroidManifest.Designer.cs">
+      <DependentUpon>FormDeAndroidManifest.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FrmMain.resx">
-      <DependentUpon>FrmMain.cs</DependentUpon>
+    <EmbeddedResource Include="FormDeAndroidManifest.resx">
+      <DependentUpon>FormDeAndroidManifest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -79,7 +78,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="jars\AXMLPrinter2.jar">
+    <ProjectReference Include="..\ECode.Common\ECode.Common.csproj">
+      <Project>{0d1e2faf-38a2-4387-81b2-8f6b16002d2d}</Project>
+      <Name>ECode.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AppData\jars\AXMLPrinter2.jar">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

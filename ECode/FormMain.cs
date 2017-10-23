@@ -1,5 +1,4 @@
-﻿using ECode.Forms;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,7 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ToNative;
 using static ECode.Commons.FormHelper;
+
+using DecompilationAndroidManifest;
+using ERegex;
+using NetCorePublishTool;
 
 namespace ECode
 {

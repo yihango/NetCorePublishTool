@@ -38,8 +38,8 @@
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.txtSource = new System.Windows.Forms.RichTextBox();
             this.dgvResult = new System.Windows.Forms.DataGridView();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.lblCount = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lblCount = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -54,7 +54,7 @@
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResult)).BeginInit();
-            this.menuStrip1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -161,8 +161,8 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.BackColor = System.Drawing.SystemColors.Control;
+            this.splitContainer2.Panel2.Controls.Add(this.panel2);
             this.splitContainer2.Panel2.Controls.Add(this.dgvResult);
-            this.splitContainer2.Panel2.Controls.Add(this.menuStrip1);
             this.splitContainer2.Size = new System.Drawing.Size(674, 265);
             this.splitContainer2.SplitterDistance = 354;
             this.splitContainer2.TabIndex = 0;
@@ -183,26 +183,26 @@
             this.dgvResult.Location = new System.Drawing.Point(0, 0);
             this.dgvResult.Name = "dgvResult";
             this.dgvResult.RowTemplate.Height = 23;
-            this.dgvResult.Size = new System.Drawing.Size(316, 240);
+            this.dgvResult.Size = new System.Drawing.Size(316, 265);
             this.dgvResult.TabIndex = 0;
             // 
-            // menuStrip1
+            // panel2
             // 
-            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.menuStrip1.Enabled = false;
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lblCount});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 240);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(316, 25);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
+            this.panel2.Controls.Add(this.lblCount);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 243);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(316, 22);
+            this.panel2.TabIndex = 1;
             // 
             // lblCount
             // 
+            this.lblCount.AutoSize = true;
+            this.lblCount.Location = new System.Drawing.Point(5, 5);
             this.lblCount.Name = "lblCount";
-            this.lblCount.Size = new System.Drawing.Size(99, 21);
-            this.lblCount.Text = "匹配到0条数据";
+            this.lblCount.Size = new System.Drawing.Size(95, 12);
+            this.lblCount.TabIndex = 0;
+            this.lblCount.Text = "匹配到 0 条数据";
             // 
             // FormRegex
             // 
@@ -210,7 +210,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(674, 433);
             this.Controls.Add(this.splitContainer1);
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormRegex";
             this.ShowIcon = false;
             this.Text = "正则测试工具    by.玩双截棍的熊猫";
@@ -226,12 +225,11 @@
             this.panel1.PerformLayout();
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel2.ResumeLayout(false);
-            this.splitContainer2.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvResult)).EndInit();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -248,8 +246,8 @@
         private System.Windows.Forms.DataGridView dgvResult;
         private System.Windows.Forms.RichTextBox txtSelect;
         private System.Windows.Forms.SplitContainer splitContainer3;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem lblCount;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label lblCount;
     }
 }
 
