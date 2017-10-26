@@ -180,14 +180,14 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(5, 5);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(227, 12);
+            this.label4.Size = new System.Drawing.Size(287, 12);
             this.label4.TabIndex = 19;
-            this.label4.Text = "注:目标框架需要配置项目文件,详情查看:";
+            this.label4.Text = "注:目标框架需要配置TargetFramework(s),详情查看:";
             // 
             // linkDoc
             // 
             this.linkDoc.AutoSize = true;
-            this.linkDoc.Location = new System.Drawing.Point(236, 5);
+            this.linkDoc.Location = new System.Drawing.Point(296, 5);
             this.linkDoc.Name = "linkDoc";
             this.linkDoc.Size = new System.Drawing.Size(359, 12);
             this.linkDoc.TabIndex = 20;
