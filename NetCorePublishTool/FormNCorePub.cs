@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 using static ECode.Commons.TimeEx;
 
 namespace NetCorePublishTool
@@ -68,6 +69,16 @@ namespace NetCorePublishTool
             {
                 txtInPath.Text = ofd.FileName;
                 isBtnSelectInPath = true;
+
+                cmbFrameworks.Items.Clear();
+                var isSuccess = ReadTargetFramework(txtInPath.Text, out string[] targets);
+                if (!isSuccess)
+                {
+                    MessageBox.Show("项目配置TargetFramework(s)不正确,请检查!", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                cmbFrameworks.Items.AddRange(targets);
+                cmbFrameworks.SelectedIndex = 0;
             }
         }
 
@@ -103,7 +114,20 @@ namespace NetCorePublishTool
                     }
 
                     // 是否检测到项目文件
-                    if (!flag)
+                    if (flag)
+                    {
+                        // 检测到项目文件则读取运行时配置
+                        cmbFrameworks.Items.Clear();
+                        var isSuccess = ReadTargetFramework(txtInPath.Text, out string[] targets);
+                        if (!isSuccess)
+                        {
+                            MessageBox.Show("项目配置TargetFramework(s)不正确,请检查!", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+                        cmbFrameworks.Items.AddRange(targets);
+                        cmbFrameworks.SelectedIndex = 0;
+                    }
+                    else
                     {
                         MessageBox.Show("未找到项目文件!请检查是否存在.csproj项目文件!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
@@ -201,6 +225,12 @@ namespace NetCorePublishTool
                 return;
             }
 
+            if (cmbFrameworks.SelectedIndex < 0)
+            {
+                MessageBox.Show("请选择目标框架!", "提示");
+                return;
+            }
+
             if (!Directory.Exists(txtOutPath.Text))
             {
                 Directory.CreateDirectory(txtOutPath.Text);
@@ -226,6 +256,9 @@ namespace NetCorePublishTool
                 sb.Append(" -r ");
                 sb.Append(cmbRuntime.SelectedItem.ToString());
             }
+
+            sb.Append(" -f ");
+            sb.Append(cmbFrameworks.SelectedItem.ToString());
 
             sb.Append(" -o ");
             sb.Append("\"");
@@ -263,6 +296,37 @@ namespace NetCorePublishTool
             {
                 this.txtLog.AppendText(par);
             }), str);
+        }
+
+
+
+        /// <summary>
+        /// 读取目标运行时
+        /// </summary>
+        /// <param name="xmlPath"></param>
+        /// <param name="targets"></param>
+        /// <returns></returns>
+        public bool ReadTargetFramework(string xmlPath, out string[] targets)
+        {
+            targets = null;
+            var xmlDoc = new XmlDocument();
+            xmlDoc.Load(xmlPath);
+            var runTimeElement = (XmlElement)xmlDoc.SelectSingleNode("Project/PropertyGroup/TargetFramework");
+            if (runTimeElement == null)
+            {
+                runTimeElement = (XmlElement)xmlDoc.SelectSingleNode("Project/PropertyGroup/TargetFrameworks");
+            }
+
+            if (runTimeElement != null)
+            {
+                var runtimes = runTimeElement.InnerText.Split(new char[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
+                if (runtimes != null || runtimes.Length >= 0)
+                {
+                    targets = runtimes;
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }

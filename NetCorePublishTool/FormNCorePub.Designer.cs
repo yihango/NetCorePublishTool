@@ -37,7 +37,7 @@
             this.btnSelectOutPath = new System.Windows.Forms.Button();
             this.cmbRuntime = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cmbFrameworks = new System.Windows.Forms.ComboBox();
             this.ckbRuntime = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnPubNow = new System.Windows.Forms.Button();
@@ -59,7 +59,7 @@
             // 
             // btnSelectSourcePath
             // 
-            this.btnSelectSourcePath.Location = new System.Drawing.Point(592, 21);
+            this.btnSelectSourcePath.Location = new System.Drawing.Point(573, 21);
             this.btnSelectSourcePath.Name = "btnSelectSourcePath";
             this.btnSelectSourcePath.Size = new System.Drawing.Size(75, 23);
             this.btnSelectSourcePath.TabIndex = 0;
@@ -70,7 +70,7 @@
             // 
             this.txtInPath.Location = new System.Drawing.Point(8, 23);
             this.txtInPath.Name = "txtInPath";
-            this.txtInPath.Size = new System.Drawing.Size(578, 21);
+            this.txtInPath.Size = new System.Drawing.Size(559, 21);
             this.txtInPath.TabIndex = 1;
             // 
             // label1
@@ -89,7 +89,7 @@
             this.cmbPubMode.Items.AddRange(new object[] {
             "Release",
             "Debug"});
-            this.cmbPubMode.Location = new System.Drawing.Point(303, 111);
+            this.cmbPubMode.Location = new System.Drawing.Point(215, 113);
             this.cmbPubMode.Name = "cmbPubMode";
             this.cmbPubMode.Size = new System.Drawing.Size(121, 20);
             this.cmbPubMode.TabIndex = 3;
@@ -107,12 +107,12 @@
             // 
             this.txtOutPath.Location = new System.Drawing.Point(8, 67);
             this.txtOutPath.Name = "txtOutPath";
-            this.txtOutPath.Size = new System.Drawing.Size(578, 21);
+            this.txtOutPath.Size = new System.Drawing.Size(559, 21);
             this.txtOutPath.TabIndex = 8;
             // 
             // btnSelectOutPath
             // 
-            this.btnSelectOutPath.Location = new System.Drawing.Point(592, 67);
+            this.btnSelectOutPath.Location = new System.Drawing.Point(573, 67);
             this.btnSelectOutPath.Name = "btnSelectOutPath";
             this.btnSelectOutPath.Size = new System.Drawing.Size(75, 23);
             this.btnSelectOutPath.TabIndex = 7;
@@ -123,7 +123,7 @@
             // 
             this.cmbRuntime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbRuntime.FormattingEnabled = true;
-            this.cmbRuntime.Location = new System.Drawing.Point(430, 111);
+            this.cmbRuntime.Location = new System.Drawing.Point(342, 113);
             this.cmbRuntime.Name = "cmbRuntime";
             this.cmbRuntime.Size = new System.Drawing.Size(152, 20);
             this.cmbRuntime.TabIndex = 10;
@@ -131,26 +131,25 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(641, 93);
+            this.label5.Location = new System.Drawing.Point(500, 98);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(113, 12);
+            this.label5.Size = new System.Drawing.Size(53, 12);
             this.label5.TabIndex = 13;
-            this.label5.Text = "目标框架(暂时无效)";
-            this.label5.Visible = false;
+            this.label5.Text = "目标框架";
             // 
-            // comboBox3
+            // cmbFrameworks
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(643, 108);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 20);
-            this.comboBox3.TabIndex = 12;
-            this.comboBox3.Visible = false;
+            this.cmbFrameworks.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbFrameworks.FormattingEnabled = true;
+            this.cmbFrameworks.Location = new System.Drawing.Point(502, 113);
+            this.cmbFrameworks.Name = "cmbFrameworks";
+            this.cmbFrameworks.Size = new System.Drawing.Size(121, 20);
+            this.cmbFrameworks.TabIndex = 12;
             // 
             // ckbRuntime
             // 
             this.ckbRuntime.AutoSize = true;
-            this.ckbRuntime.Location = new System.Drawing.Point(431, 92);
+            this.ckbRuntime.Location = new System.Drawing.Point(343, 94);
             this.ckbRuntime.Name = "ckbRuntime";
             this.ckbRuntime.Size = new System.Drawing.Size(84, 16);
             this.ckbRuntime.TabIndex = 14;
@@ -160,7 +159,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(303, 96);
+            this.label2.Location = new System.Drawing.Point(215, 98);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 12);
             this.label2.TabIndex = 15;
@@ -170,7 +169,7 @@
             // 
             this.btnPubNow.Location = new System.Drawing.Point(7, 94);
             this.btnPubNow.Name = "btnPubNow";
-            this.btnPubNow.Size = new System.Drawing.Size(267, 39);
+            this.btnPubNow.Size = new System.Drawing.Size(200, 39);
             this.btnPubNow.TabIndex = 18;
             this.btnPubNow.Text = "立即发布";
             this.btnPubNow.UseVisualStyleBackColor = true;
@@ -217,7 +216,7 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.cmbRuntime);
             this.panel2.Controls.Add(this.ckbRuntime);
-            this.panel2.Controls.Add(this.comboBox3);
+            this.panel2.Controls.Add(this.cmbFrameworks);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
@@ -313,7 +312,7 @@
         private System.Windows.Forms.Button btnSelectOutPath;
         private System.Windows.Forms.ComboBox cmbRuntime;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cmbFrameworks;
         private System.Windows.Forms.CheckBox ckbRuntime;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnPubNow;
