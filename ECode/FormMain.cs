@@ -33,9 +33,18 @@ namespace ECode
 
             this.btnAbout.Click += BtnAbout_Click;
 
-            //this.menuStrip1.ItemAdded += MenuStrip1_ItemAdded;
+            this.menus.ItemAdded += Menus_ItemAdded; ;
 
             this.FormClosing += FormMain_FormClosing;
+        }
+
+        private void Menus_ItemAdded(object sender, ToolStripItemEventArgs e)
+        {
+            // 不显示子窗体最前面的icon
+            if (e.Item.Text.Length == 0)
+            {
+                e.Item.Visible = false;
+            }
         }
 
         private void BtnAbout_Click(object sender, EventArgs e)
@@ -48,13 +57,6 @@ namespace ECode
             this.GetForm<FormRegex>().Show();
         }
 
-        //private void MenuStrip1_ItemAdded(object sender, ToolStripItemEventArgs e)
-        //{
-        //    if (e.Item.Text.Length == 0 || e.Item.Text == "还原(&R)" || e.Item.Text == "最小化(&N)" || e.Item.Text == "关闭(&C)")
-        //    {
-        //        e.Item.Visible = false;
-        //    }
-        //}
 
         private void BtnToNavite_Click(object sender, EventArgs e)
         {

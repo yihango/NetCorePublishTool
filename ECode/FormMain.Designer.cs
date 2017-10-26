@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.menus = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.btnNetCorePub = new System.Windows.Forms.ToolStripMenuItem();
             this.xamarinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -39,22 +39,22 @@
             this.其他ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnRegexTool = new System.Windows.Forms.ToolStripMenuItem();
             this.btnAbout = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1.SuspendLayout();
+            this.menus.SuspendLayout();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // menus
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menus.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1,
             this.xamarinToolStripMenuItem,
             this.宇内流云ToolStripMenuItem,
             this.其他ToolStripMenuItem,
             this.btnAbout});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(651, 25);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
+            this.menus.Location = new System.Drawing.Point(0, 0);
+            this.menus.Name = "menus";
+            this.menus.Size = new System.Drawing.Size(651, 25);
+            this.menus.TabIndex = 1;
+            this.menus.Text = "menuStrip1";
             // 
             // toolStripMenuItem1
             // 
@@ -95,7 +95,7 @@
             // btnToNative
             // 
             this.btnToNative.Name = "btnToNative";
-            this.btnToNative.Size = new System.Drawing.Size(152, 22);
+            this.btnToNative.Size = new System.Drawing.Size(139, 22);
             this.btnToNative.Text = "EXE Native";
             // 
             // 其他ToolStripMenuItem
@@ -123,15 +123,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(651, 429);
-            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.menus);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
-            this.MainMenuStrip = this.menuStrip1;
+            this.MainMenuStrip = this.menus;
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ECode";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.menus.ResumeLayout(false);
+            this.menus.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -139,7 +139,7 @@
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip menus;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem btnNetCorePub;
         private System.Windows.Forms.ToolStripMenuItem xamarinToolStripMenuItem;
