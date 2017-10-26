@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormNCorePub));
             this.btnSelectSourcePath = new System.Windows.Forms.Button();
             this.txtInPath = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -288,8 +289,8 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormNCorePub";
-            this.ShowIcon = false;
             this.Text = "NCorePub  by.玩双截棍的熊猫";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

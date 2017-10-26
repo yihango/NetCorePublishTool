@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDeAndroidManifest));
             this.txtShow = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
@@ -47,8 +48,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(924, 451);
             this.Controls.Add(this.txtShow);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormDeAndroidManifest";
-            this.ShowIcon = false;
             this.Text = "AndroidManifest解析   by.玩双截棍的熊猫";
             this.ResumeLayout(false);
 

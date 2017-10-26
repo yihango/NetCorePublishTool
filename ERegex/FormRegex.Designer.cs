@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRegex));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.txtRegStrs = new System.Windows.Forms.RichTextBox();
@@ -37,9 +38,9 @@
             this.btnExec = new System.Windows.Forms.Button();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.txtSource = new System.Windows.Forms.RichTextBox();
-            this.dgvResult = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblCount = new System.Windows.Forms.Label();
+            this.dgvResult = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -53,8 +54,8 @@
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvResult)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvResult)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -176,16 +177,6 @@
             this.txtSource.TabIndex = 3;
             this.txtSource.Text = "";
             // 
-            // dgvResult
-            // 
-            this.dgvResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvResult.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvResult.Location = new System.Drawing.Point(0, 0);
-            this.dgvResult.Name = "dgvResult";
-            this.dgvResult.RowTemplate.Height = 23;
-            this.dgvResult.Size = new System.Drawing.Size(316, 265);
-            this.dgvResult.TabIndex = 0;
-            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.lblCount);
@@ -204,14 +195,24 @@
             this.lblCount.TabIndex = 0;
             this.lblCount.Text = "匹配到 0 条数据";
             // 
+            // dgvResult
+            // 
+            this.dgvResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvResult.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvResult.Location = new System.Drawing.Point(0, 0);
+            this.dgvResult.Name = "dgvResult";
+            this.dgvResult.RowTemplate.Height = 23;
+            this.dgvResult.Size = new System.Drawing.Size(316, 265);
+            this.dgvResult.TabIndex = 0;
+            // 
             // FormRegex
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(674, 433);
             this.Controls.Add(this.splitContainer1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormRegex";
-            this.ShowIcon = false;
             this.Text = "正则测试工具    by.玩双截棍的熊猫";
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -227,9 +228,9 @@
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvResult)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvResult)).EndInit();
             this.ResumeLayout(false);
 
         }

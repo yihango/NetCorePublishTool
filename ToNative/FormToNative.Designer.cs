@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormToNative));
             this.label1 = new System.Windows.Forms.Label();
             this.txtSourcePath = new System.Windows.Forms.TextBox();
             this.btnSelectSourcePath = new System.Windows.Forms.Button();
@@ -198,8 +199,8 @@
             this.ClientSize = new System.Drawing.Size(652, 448);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormToNative";
-            this.ShowIcon = false;
             this.Text = "EXE ToNative   by.宇内流云(源)  玩双截棍的熊猫(窗体整合)";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
