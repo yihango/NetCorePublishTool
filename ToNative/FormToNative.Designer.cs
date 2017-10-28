@@ -98,7 +98,7 @@
             this.cmbMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMode.FormattingEnabled = true;
             this.cmbMode.Items.AddRange(new object[] {
-            "default        默认生成",
+            "default        默认生成x64控制台程序",
             "winform      生成Windows窗体程序",
             "win7 x86     生成支持32位 Win7 以上系统的程序",
             "winXP x86   生成支持32位 Win XP 以上系统的程序",
