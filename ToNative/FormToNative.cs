@@ -162,7 +162,7 @@ namespace ToNative
                     sb.Append(" --xp ");
                     break;
                 //case 4:
-                //    sb.Append(" -lin ");
+                //    sb.Append(" --lin ");
                 //    break;
                 default:
                     MessageBox.Show("暂未支持！", "提示");
