@@ -156,10 +156,10 @@ namespace ToNative
                     sb.Append(" -w ");
                     break;
                 case 2:
-                    sb.Append(" -x32 ");
+                    sb.Append(" --x32 ");
                     break;
                 case 3:
-                    sb.Append(" -xp ");
+                    sb.Append(" --xp ");
                     break;
                 //case 4:
                 //    sb.Append(" -lin ");
